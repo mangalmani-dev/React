@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohort aur React</title>
+
+  <!-- React & ReactDOM -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+
+  <!-- Babel (to compile JSX in browser) -->
+  <script src="https://unpkg.com/@babel/standalone@7.28.4/babel.min.js"></script>
+</head>
+<body>
+  <div id="root">Loading...</div>
+
+  <script type="text/babel">
+    // Component (PascalCase)
+    const Chai = ({ name }) => {
+      return (
+        <div>
+          <h2>{name}</h2>
+        </div>
+      );
+    };
+
+    // App component
+    const App = () => {
+      return (
+        <div>
+          <h1>Chai Variations</h1>
+          <Chai name="Ginger Tea" />
+          <Chai name="Hot Tea" />
+          <Chai name="Chocolate Tea" />
+        </div>
+      );
+    };
+
+    // Rendering
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>
